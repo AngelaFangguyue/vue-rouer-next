@@ -1,27 +1,34 @@
 <template>
-  <div id='root'>
+  <!-- <div id='root'>
     <img src='./logo.png' />
     <div id='nav'>
       <router-link to='/'> Home</router-link>
       <router-link to='/contact'>Contact </router-link>
     </div>
     <router-view />
-  </div>
+  </div>-->
+  <router-view />
 </template>
 
 <script>
-import { ref } from 'vue'
-
+import { setup, ref } from "vue";
+import { usesourceDataProvide } from "./stores/index1";
+//import Main from './views/Main.vue';
 export default {
- 
-}
+  name: "App",
+  //components:{Main}
+  setup() {
+    usesourceDataProvide();
+    return {};
+  },
+};
 </script>
 
 <style scoped>
-
 #root {
   text-align: center;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 img {
@@ -41,7 +48,26 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: 
+  color: ;
 }
+</style>
 
+<style>
+* {
+  font-size: 16px;
+}
+</style>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.icon {
+  width: 2em;
+  height: 2em;
+  vertical-align: -0.3em;
+  fill: currentColor;
+  overflow: hidden;
+}
 </style>
